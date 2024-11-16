@@ -1,3 +1,4 @@
+// скрипт отвечающий за "рандомные" реплики персонажа когда игрок бездействует
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
