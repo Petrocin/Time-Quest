@@ -1,3 +1,4 @@
+//Скрипт, отвечающий за подсчет монет, в том числе за их визуализицию
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
