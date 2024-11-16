@@ -1,3 +1,4 @@
+//СѓРїСЂР°РІР»РµРЅРёРµ РєРІРµСЃС‚Р°РјРё
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +26,9 @@ public class QuestManager : MonoBehaviour
     {
         quests = new List<Quest>
         {
-            new Quest { questName = "Собери монеты", description = "Собери 5 монет.", targetAmount = 5, currentAmount = 0, isCompleted = false }
+            new Quest { questName = "Г‘Г®ГЎГҐГ°ГЁ Г¬Г®Г­ГҐГІГ»", description = "Г‘Г®ГЎГҐГ°ГЁ 5 Г¬Г®Г­ГҐГІ.", targetAmount = 5, currentAmount = 0, isCompleted = false }
             //                                                      ^
-            // тут способом аналогично добавлять кветы по алгоритму:|
+            // ГІГіГІ Г±ГЇГ®Г±Г®ГЎГ®Г¬ Г Г­Г Г«Г®ГЈГЁГ·Г­Г® Г¤Г®ГЎГ ГўГ«ГїГІГј ГЄГўГҐГІГ» ГЇГ® Г Г«ГЈГ®Г°ГЁГІГ¬Гі:|
         };
     }
 
@@ -39,12 +40,12 @@ public class QuestManager : MonoBehaviour
             if (!quest.isCompleted && quest.currentAmount < quest.targetAmount)
             {
                 quest.currentAmount++;
-                Debug.Log($"Собрано монет: {quest.currentAmount}/{quest.targetAmount} для квеста: {quest.questName}");
+                Debug.Log($"Г‘Г®ГЎГ°Г Г­Г® Г¬Г®Г­ГҐГІ: {quest.currentAmount}/{quest.targetAmount} Г¤Г«Гї ГЄГўГҐГ±ГІГ : {quest.questName}");
 
                 if (quest.currentAmount >= quest.targetAmount)
                 {
                     quest.isCompleted = true;
-                    Debug.Log($"Квест завершен: {quest.questName}");
+                    Debug.Log($"ГЉГўГҐГ±ГІ Г§Г ГўГҐГ°ГёГҐГ­: {quest.questName}");
                 }
             }
         }
