@@ -1,3 +1,4 @@
+//скрипт отвечающий за время и его визуализацию
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
