@@ -1,3 +1,5 @@
+//сбор монет и озвучка
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
