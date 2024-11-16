@@ -1,3 +1,4 @@
+//Добавление питомца, который бегает рядом с игроком но иногда может уйти (он вернется)
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
