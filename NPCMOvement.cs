@@ -1,4 +1,4 @@
-
+//обучающий скрипт для контролируемого движения NPC
 using System.Collections;
 using UnityEngine;
 
