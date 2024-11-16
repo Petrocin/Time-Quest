@@ -1,3 +1,4 @@
+//визуализация квестов
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ public class QuestUIManager : MonoBehaviour
         {
             GameObject questItem = Instantiate(questItemPrefab, content);
             Text questText = questItem.GetComponent<Text>();
-            questText.text = $"{quest.questName} - {quest.currentAmount}/{quest.targetAmount} {(quest.isCompleted ? "(��������)" : "")}";
+            questText.text = $"{quest.questName} - {quest.currentAmount}/{quest.targetAmount} {(quest.isCompleted ? "(Çàâåðøåí)" : "")}";
         }
     }
 }
