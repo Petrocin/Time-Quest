@@ -1,31 +1,30 @@
-//скрипт отвечающий за время и его визуализацию
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-
-public class NewBehaviourScript : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    private float Timecount = 0f;
-    public TextMeshProUGUI timeText;
+    private float elapsedTime = 0f;
+    [SerializeField] private TextMeshProUGUI timeText; 
 
-    private void Update() {
-        Timecount += Time.deltaTime;
+    private void Update()
+    {
+        UpdateElapsedTime();
         UpdateTimeUI();
-
     }
+
+    private void UpdateElapsedTime()
+    {
+        elapsedTime += Time.deltaTime;
+    }
+
     private void UpdateTimeUI()
     {
-        int minutes = Mathf.FloorToInt(Timecount / 60);
-        int seconds = Mathf.FloorToInt(Timecount % 60);
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
         if (timeText != null)
         {
-
-
-
-            timeText.text = string.Format( "time:    "+"{0:00} : {1:00}", minutes, seconds);
+            timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
 }
