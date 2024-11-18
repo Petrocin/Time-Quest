@@ -1,18 +1,17 @@
-//сбор монет и озвучка
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour 
+[RequireComponent(typeof(AudioSource))]
+public class Coin : MonoBehaviour
 {
-    public AudioClip collectSound;
+    [SerializeField] private AudioClip collectSound; // Задайте эту переменную в инспекторе Unity
+    [SerializeField] private AudioClip coinSound; // Задайте эту переменную в инспекторе Unity
     private AudioSource audioSource;
-    public AudioClip coinSound;
 
-    void Start()
+    void Awake()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         audioSource.clip = collectSound;
     }
 
@@ -20,18 +19,19 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayCollectSound();
-            CoinCounter.Instance.CollectCoin();
-            Destroy(gameObject);
+            CollectCoin();
         }
     }
 
-    void PlayCollectSound()
+    private void CollectCoin()
     {
-        Debug.Log("Playing collect sound.");
+        PlayCollectSound();
+        CoinCounter.Instance.CollectCoin();
+        Destroy(gameObject);
+    }
+
+    private void PlayCollectSound()
+    {
         AudioSource.PlayClipAtPoint(coinSound, transform.position);
-        Debug.Log("Played sound: " + collectSound.name);
     }
 }
-
-// поправил логику алгоритма
