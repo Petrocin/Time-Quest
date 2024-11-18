@@ -1,33 +1,38 @@
-//Скрипт, отвечающий за подсчет монет, в том числе за их визуализицию
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class CoinCounter : MonoBehaviour
 {
-    public static CoinCounter Instance;
-    public TextMeshProUGUI coinText;
+    public static CoinCounter Instance { get; private set; } // создал статический экземпляр класса
+    [SerializeField] private TextMeshProUGUI coinText; 
     private int coinCount = 0;
-    private void Awake() {
+
+    private void Awake()
+    {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); 
         }
-        else {
-            Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject); 
         }
     }
-    private void Start() {
-        UpdateCoinText();
+
+    private void Start()
+    {
+        UpdateCoinUI();
     }
-    public void CollectCoin() {
+
+    public void CollectCoin()
+    {
         coinCount++;
-        UpdateCoinText();
+        UpdateCoinUI();
     }
-    private void UpdateCoinText() {
-        coinText.text = "coins: " + coinCount;
+
+    private void UpdateCoinUI()
+    {
+        coinText.text = $"Coins: {coinCount}"; // сделал интерполяция строк для удобства чтения
     }
 }
