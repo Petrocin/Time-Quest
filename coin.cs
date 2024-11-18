@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private AudioClip collectSound; // Задайте эту переменную в инспекторе Unity
-    [SerializeField] private AudioClip coinSound; // Задайте эту переменную в инспекторе Unity
+    [SerializeField] private AudioClip collectSound; // Задавать эту переменную в инспекторе Unity
+    [SerializeField] private AudioClip coinSound; // Задавать эту переменную в инспекторе Unity
     private AudioSource audioSource;
 
     void Awake()
